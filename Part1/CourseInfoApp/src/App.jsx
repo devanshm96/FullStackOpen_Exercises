@@ -8,7 +8,8 @@ function Header(props){
 }
 
 function Content(props){
-  console.log(props);
+// logging for debugging  
+//console.log(props);
 
   return(
     <>
