@@ -2,6 +2,7 @@
 ![unicafeApp1](https://github.com/user-attachments/assets/a1d381d7-1bec-4475-b870-b78d14594cf6)
 ![unicafeApp2](https://github.com/user-attachments/assets/eb3b87ec-969f-4690-a4ae-285c80b2bc63)
 ![unicafeApp3](https://github.com/user-attachments/assets/bba99668-3631-40b0-a313-37f4e97cdf5e)
+Scoring: [Good: 1, Neutral: 0, Bad: -1]
 
 # React + Vite
 
