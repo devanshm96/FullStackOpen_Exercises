@@ -8,36 +8,57 @@ function Header(props){
 }
 
 function Content(props){
+  console.log(props);
+
   return(
     <>
-      <p>Topic: {props.topic}, Exercises: {props.exercises}</p>
+    <p>This is - {props.parts[0].name} module with {props.parts[0].exercises} exercises</p>
+    <p>This is - {props.parts[1].name} module with {props.parts[1].exercises} exercises</p>
+    <p>This is - {props.parts[2].name} module with {props.parts[2].exercises} exercises</p>
     </>
   )
 }
 
 function Total(props){
+  if (!props.parts) {
+    return <p>No parts available</p>; // Added safety check
+  }
+
+  let totalExercises=0;
+
+  props.parts.forEach(ele => {
+    totalExercises+=ele.exercises;
+  });
+
   return(
     <>
-      <p>Total number of exercises: {props.total}</p>
+      <p>Total number of exercises: {totalExercises}</p>
     </>
   )
 }
+
 const App = () => {
   const course = 'Half Stack application development'
-  const part1 = 'Fundamentals of React'
-  const exercises1 = 10
-  const part2 = 'Using props to pass data'
-  const exercises2 = 7
-  const part3 = 'State of a component'
-  const exercises3 = 14
+  const parts = [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ]
 
   return (
     <div>
       <Header course={course}/>
-      <Content topic={part1} exercises={exercises1}/>
-      <Content topic={part2} exercises={exercises2}/>
-      <Content topic={part3} exercises={exercises3}/>
-      <Total total={exercises1 + exercises2 + exercises3}/>
+      <Content parts={parts}/>
+      <Total parts={parts}/>
     </div>
   )
 }
